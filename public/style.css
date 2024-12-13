@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+body {
+    background-color: #4a154b;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.top {
+    background-color: #4a154b;
+    height: 2rem;
+}
+
+.bottom {
+    background-color: #4a154b;
+    display: flex;
+    height: 96vh;
+    width: 100vw;
+    flex-direction: row;
+    padding-right: 1px;
+}
+
+.login-form,
+.load-login {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    overflow: hidden;
+    color: #b6b6b7;
+
+}
+
+.load-chat {
+    background-color: #FFFFFF;
+    color: #b6b6b7;
+    height: 100%;
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    overflow: hidden;
+
+}
+
+
+.loading p {
+    font-size: 1.5rem;
+}
+
+.enter-username {
+    height: 44px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    border-color: #b6b6b7;
+    border-style: solid;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.login-btn {
+    background-color: #5c2c5e;
+    height: 44px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    border-color: #5c2c5e;
+    border-style: solid;
+    padding: 5px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+.user-bar {
+    background-color: #4a154b;
+    height: 100%;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    color: #4a154b;
+    background-color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn {
+    background-color: #4a154b;
+    color: white;
+    border-style: none;
+    fill: white;
+    cursor: pointer;
+    border-radius: 20%;
+}
+
+.logout-btn:hover {
+    background-color: #5c2c5e;
+
+}
+
+.main {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: cadetblue;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.users-list {
+    background-color: #5c2c5e;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    overflow: auto;
+}
+
+.public-channel,
+.chat-unit {
+    margin-top: 0.5rem;
+    width: 92%;
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    gap: 0.5rem;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #5c2c5e;
+}
+
+.public-channel:hover,
+.chat-unit:hover {
+    background-color: rgb(138, 104, 138);
+    cursor: pointer;
+}
+
+.focused {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border-radius: 0;
+    background-color: rgb(138, 104, 138);
+}
+
+.focused .receiver-name {
+    font-size: 1.8rem;
+
+}
+
+.focused .receiver-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+.receiver-avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 20%;
+    color: orange;
+    background-color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.receiver-name {
+    font-size: 1.2rem;
+    color: #f9edff;
+}
+
+
+.msg-board {
+    background-color: #FFFFFF;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.msg-list {
+    overflow: auto;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.divider {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 50%;
+    border-top: 1px solid grey;
+    z-index: 1;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.message-unit {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.message-unit:hover {
+    background-color: rgba(182, 182, 183, 0.185);
+}
+
+.sender-avatar {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: #4a154b;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem
+}
+
+.sender-info {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: baseline;
+}
+
+.sender-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.send-time {
+    color: grey;
+    font-size: 0.8rem;
+}
+
+.send-box {
+    border-color: #bbbabb;
+    box-shadow: 0px 0px 5px #bbbabb99;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    height: 15%;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.enter-msg {
+    padding: 10px;
+    border-style: none;
+    font-size: 1.2rem;
+    width: 90%;
+}
+
+.enter-msg:focus {
+    outline: none;
+}
+
+.send-msg {
+    border-style: none;
+    background-color: white;
+}
+
+
+.send-msg svg {
+    fill: #ad9bad;
+
+}
+
+.send-msg svg :hover {
+    cursor: pointer;
+    fill: #4a154b;
+}
